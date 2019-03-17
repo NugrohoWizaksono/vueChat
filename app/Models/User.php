@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Message;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -28,7 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function messages(){
-        return $this->hasMany(app\Models\Message::class);
+    public function messages()
+    {
+        return $this->hasMany(\App\Models\Message::class);
     }
 }
